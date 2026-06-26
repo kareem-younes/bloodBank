@@ -11,9 +11,14 @@ export class AdminServices {
   apiUrl: string = environment.apiUrl;
   constructor(private httpClient: HttpClient) {}
 
+
+
+  
   getPendingRequests():Observable<any> {
     return this.httpClient.get(`${this.apiUrl}admin/requests/pending`)
   }
+
+  
   approveRequest(id:string):Observable<any> {
     return this.httpClient.patch(`${this.apiUrl}admin/requests/${id}/approved`, {})
   }
