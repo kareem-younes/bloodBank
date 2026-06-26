@@ -1,0 +1,56 @@
+.requests-box .header {
+  display: flex;
+  justify-content: space-between;
+}
+.requests-box .header h3 {
+  display: flex;
+  align-items: center;
+}
+.requests-box .header ul {
+  display: flex;
+  gap: 3px
+}
+.requests-box .header ul li {
+  padding: 5px 8px;
+  background-color:cornsilk;
+  border-radius: 10px;
+  font-size: .6rem;
+  display: flex;
+  align-items: center;
+}
+.requests-box > ul li {
+  display: flex;
+  align-items: center;
+}
+.requests-box > ul li:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.requests-box > ul li svg {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 2px;
+}
+.requests-box > ul li span:first-of-type {
+  color: var(--text-muted);
+  margin-right: 5px;
+}
+.requests-box svg {
+  margin-right: 5px;
+}
+.requests-box .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.main-btn {
+  padding: 10px 16px;
+  display: flex;
+}
+.main-btn svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+.approve {
+  background-color: #28a745;
+}

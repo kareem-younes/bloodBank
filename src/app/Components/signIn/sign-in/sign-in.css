@@ -1,0 +1,104 @@
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.heading h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.heading p{
+  margin: 0;
+  color: var(--text-muted);
+}
+form {
+  padding: 20px 30px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--grey-hover);
+  display: flex;
+  flex-direction: column;
+}
+form label:not(:last-child) {
+  margin-bottom: 10px;
+}
+form #email {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--grey-hover);
+  padding: 15px;
+  outline: none;
+  margin-bottom: 30px;
+  transition: .2s;
+  width: 400px;
+}
+form #password {
+  border: none;
+  outline: none;
+  padding: 15px;
+  width: 100%;
+}
+form .hide {
+  padding: 10px;
+  transition: .3s;
+  cursor: pointer;
+  height: 100%;
+  border-radius: var(--border-radius);
+}
+form .hide:hover {
+  background-color: rgba(165, 42, 42, 0.237);
+}
+form .hide svg {
+  width: 23px;
+  height: 23px;
+  transition: .3s;
+}
+form .hide:hover svg {
+  color: var(--primary-color);
+}
+.password-holder {
+  display: flex;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--grey-hover);
+  outline: none;
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: .2s;
+}
+.password-holder:focus-within,
+form #email:focus {
+  outline: 3px solid var(--primary-color);
+}
+
+input[type=checkbox] {
+  margin-right: 6px;
+}
+form .actions {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+form .actions a {
+  color: var(--primary-color);
+}
+
+form input[type=submit] {
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+  transition: .3s;
+  font: bold;
+  cursor: pointer;
+}
+form input[type=submit]:hover {
+  transform: scale(1.06);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+form > p {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: 20px;
+}

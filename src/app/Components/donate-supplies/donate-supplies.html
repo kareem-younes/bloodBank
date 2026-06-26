@@ -1,0 +1,126 @@
+<div class="holder">
+  <app-seaction-header>
+    <div class="donate-supplies-header m-4">
+      <div class="icon-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#198754"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="package-icon">
+          <path
+            d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z">
+          </path>
+          <path d="M12 22V12"></path>
+          <path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"></path>
+          <path d="m7.5 4.27 9 5.15"></path>
+        </svg>
+      </div>
+
+      <h1>Donate Medical Supplies</h1>
+      <p>Help hospitals by donating essential medical equipment and supplies</p>
+    </div>
+
+  </app-seaction-header>
+
+  <div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="formsSubmit()" class="w mx-auto space-y-6 my-5">
+
+      <!-- FULL NAME + PHONE -->
+      <div class="fullNameAndFullNumber-allForm row ">
+        <div class="fullName col-6 position-relative">
+          <label for="fullName" class="form-label">Full Name *</label>
+          <input formControlName="name" type="text" id="fullName" placeholder="Enter your full name" class="form full">
+
+          @if (registerForm.get("name")?.touched && registerForm.get("name")?.errors) {
+          <div class="alert p-0 m-0 mt-1">
+            @if (registerForm.get("name")?.getError("required")) {
+            <p class="error-msg">Name is required</p>
+            }
+            @else if (registerForm.get("name")?.getError("minlength")) {
+            <p class="error-msg">Name must be at least 3 characters</p>
+            }
+            @else if (registerForm.get("name")?.getError("maxlength")) {
+            <p class="error-msg">Name must be less than or equal to 20 characters</p>
+            }
+          </div>
+          }
+        </div>
+
+        <div class="fullNumber col-6 position-relative">
+          <label for="fullNumber" class="form-label">Phone Number *</label>
+          <input formControlName="phoneNumber" type="tel" id="fullNumber" placeholder="+1(555)123-456" class="form full">
+
+          @if (registerForm.get("phoneNumber")?.touched && registerForm.get("phoneNumber")?.errors) {
+          <div class="alert p-0 m-0 mt-1">
+            @if (registerForm.get("phoneNumber")?.getError("required")) {
+            <p class="error-msg">Phone number is required</p>
+            }
+            @else if (registerForm.get("phoneNumber")?.getError("pattern")) {
+            <p class="error-msg">Enter a valid phone number</p>
+            }
+          </div>
+          }
+        </div>
+      </div>
+
+      <!-- TYPE + HOSPITAL -->
+      <div class="fullNameAndFullNumber-allForm d-flex justify-content-between flex-wrap">
+        <div class="cols">
+          <label for="Type-of-Medicine" class="form-label">Type of Medicine *</label>
+          <select formControlName="typeOfTools" id="Type-of-Medicine" class="form full w-100">
+            <option value="">Select medicine type</option>
+            <option *ngFor="let item of typeOftools" [value]="item.name">{{ item.name }}</option>
+          </select>
+
+          @if (registerForm.get("typeOfTools")?.touched && registerForm.get("typeOfTools")?.hasError("required")) {
+          <p class="error-msg">Please select the type of medicine</p>
+          }
+        </div>
+
+        <div class="select cols p-0">
+          <label for="hospital" class="form-label">Recipient Hospital *</label>
+          <select formControlName="hospital" id="hospital" class="form full">
+            <option value="">Select hospital</option>
+            @for (item of categorys; track item._id) {
+            <option [value]="item._id">{{ item.name }}</option>
+            }
+          </select>
+
+          @if (registerForm.get("hospital")?.touched && registerForm.get("hospital")?.hasError("required")) {
+          <p class="error-msg">Please select a recipient hospital</p>
+          }
+        </div>
+      </div>
+
+      <!-- DATE + ADDRESS -->
+      <div class="grid-container">
+        <div class="form-group">
+          <label for="donationDate">Preferred Donation Date *</label>
+          <input type="date" id="donationDate" class="form full" formControlName="dateOfBirth">
+          @if (registerForm.get("dateOfBirth")?.touched && registerForm.get("dateOfBirth")?.errors) {
+          @if (registerForm.get("dateOfBirth")?.getError("required")) {
+          <p class="error-msg">Please select a donation date</p>
+          }
+          @else if (registerForm.get("dateOfBirth")?.getError("min")) {
+          <p class="error-msg">Donation date cannot be earlier than today</p>
+          }
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="address">Pickup Address *</label>
+          <input formControlName="address" type="text" id="address" placeholder="Your address for pickup"
+            class="form full">
+
+          @if (registerForm.get("address")?.touched && registerForm.get("address")?.hasError("required")) {
+          <p class="error-msg">Pickup address is required</p>
+          }
+        </div>
+      </div>
+
+      <!-- SUBMIT -->
+      <button type="submit" class="submit-donation-btn" [disabled]="registerForm.invalid">
+        Submit Donation Request
+      </button>
+
+    </form>
+  </div>
+
+</div>

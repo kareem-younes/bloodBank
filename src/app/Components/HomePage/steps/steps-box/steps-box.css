@@ -1,0 +1,36 @@
+.box {
+  text-align: center;
+}
+.icon {
+  padding: 20px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px -2px hsl(210 10% 50% / .08),
+  0 0 #0000,
+  0 4px 12px -2px hsl(210 10% 50% / .08);
+  width: fit-content;
+  margin: auto;
+  transition: .3s;
+  cursor: pointer;
+}
+.icon:hover {
+  transform: scale(1.1);
+}
+svg {
+  width: 50px;
+  height: 50px;
+}
+h3 {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+p {
+  color: var(--text-muted);
+  margin-right: auto;
+  margin-left: auto;
+}
+@media(min-width: 1119px) {
+  p {
+    max-width: 40ch;
+  }
+}

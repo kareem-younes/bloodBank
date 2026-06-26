@@ -1,0 +1,9 @@
+.steps .container {
+  display: flex;
+  justify-content: space-between;
+}
+@media(max-width: 991px) {
+  .steps .container {
+    flex-direction: column;
+  }
+}

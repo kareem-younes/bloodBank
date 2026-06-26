@@ -1,0 +1,68 @@
+<form #bloodLink (ngSubmit)="submitForm({
+      name: patientName.value,
+      phoneNumber: contactNumber.value,
+      address: hospitalAddress.value,
+      bloodGroup: bloodGroup.value
+    },$event)">
+  <div class="main-heading">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user h-5 w-5 text-primary">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </svg>
+      Blood Request Form
+    </h2>
+    <p>
+      Please provide accurate information to help us find suitable donors quickly.
+    </p>
+  </div>
+
+  <div class="inputs-holder">
+    <div>
+      <label for="name">Patient Name *</label>
+      <input required #patientName placeholder="Enter Patient's Full Name" type="text" name="name" id="name" required>
+    </div>
+    <div>
+      <label for="contact">Contact Number *</label>
+      <input required #contactNumber placeholder="Enter Contact Number" type="text" name="contact" id="contact" required>
+    </div>
+  </div>
+
+  <div class="inputs-holder">
+    <div>
+      <label for="blood-group">Blood Group *</label>
+      <select #bloodGroup name="blood-group" id="blood-group" required>
+        <option value="">Select Blood Group</option>
+        @for (item of bloodTypes; track $index) {
+        <option [value]="item">{{item}}</option>
+        }
+      </select>
+    </div>
+
+    <div>
+      <label for="units">Units Needed *</label>
+      <input required #unitsNeeded placeholder="Number Of Units" type="number" name="units" id="units" required>
+    </div>
+
+    <div>
+      <label for="urgency">Urgency Level *</label>
+      <select #urgencyLevel name="urgency" id="urgency" required>
+        <option value="">Select Urgency</option>
+        @for (item of urgencyLevels; track $index) {
+        <option [value]="item">{{item}}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  <div class="inputs-holder">
+    <div>
+      <label for="hospital-adress">Hospital/Location Address *</label>
+      <input required #hospitalAddress placeholder="Enter Hospital Or Location Address" type="text" name="hospital-adress"
+        id="hospital-adress" required>
+    </div>
+  </div>
+
+  <input class="main-btn" type="submit" value="Submit Blood Request">
+</form>

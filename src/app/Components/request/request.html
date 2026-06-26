@@ -1,0 +1,89 @@
+<section>
+  <div class="requests-header m-3">
+  <h1>My Requests</h1>
+  <p>Track all your donation and request submissions</p>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+       
+       
+       
+       @for (item of data.requests; track $index) {
+
+        <div style="width: 886px;" class= "item mb-3 fw-s  border-1 rounded-3 p-2 border-1  mx-auto">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="fw-bold fs-5">
+              <i class="fa-regular fa-clock"></i> {{item.type}}
+            </div>
+            <p class=" h-auto p-s rounded-5 px-3 py-1 mt-4 req">Pending</p>
+          </div>
+
+          <div class="d-flex ">
+            <ul>
+              <li class="text-black">
+                <span style="color:hsl(210 10% 50%);"><i class="fa-regular fa-calendar m-1"></i> Date:</span> {{item.createdAt}}
+              </li>
+              <li class="text-black">
+                <span style="color:hsl(210 10% 50%);"> <i class="fa-solid fa-location-dot m-1"></i> Address:{{item.payload.address}}</span> 
+              </li>
+            </ul>
+            <ul class="ms">
+              <li class="text-black">
+                <span style="color:hsl(210 10% 50%);">Hospital:</span> {{item.payload.hospital}}</li>
+              <li class="text-black">
+                @if (item.type=="find_blood") {
+                  <span style=" padding: 0 5px; color:hsl(210 10% 50%);">bloodGroup:{{item.payload.bloodType}}</span> 
+                  
+                }
+                @else if (item.type=="donate_medicine") {
+                                    <span style=" padding: 0 5px; color:hsl(210 10% 50%);">bloodGroup:{{item.payload.name}}</span> 
+
+
+                }
+                
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      }
+
+         <!-- @for (item of data.requests; track $index) {
+        <div style="width: 886px;" class= "item mb-3 fw-s  border-1 rounded-3 p-2 border-1  mx-auto">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="fw-bold fs-5">
+              <i class="fa-regular fa-clock"></i> {{item.type}}
+            </div>
+            <p class=" h-auto p-s rounded-5 px-3 py-1 mt-4 req">Pending</p>
+          </div>
+
+          <div class="d-flex ">
+            <ul>
+              <li class="text-black">
+                <span style="color:hsl(210 10% 50%);"><i class="fa-regular fa-calendar m-1"></i> Date:</span> 5/22/2025
+              </li>
+              <li class="text-black">
+                <span style="color:hsl(210 10% 50%);"> <i class="fa-solid fa-location-dot m-1"></i> Address:</span> 
+              </li>
+            </ul>
+            <ul class="ms">
+              <li class="text-black">
+                <span style="color:hsl(210 10% 50%);">Hospital:</span> City General Hospital</li>
+              <li class="text-black">
+                <span style=" padding: 0 5px; color:hsl(210 10% 50%);">Blood group:</span> </li>
+            </ul>
+          </div>
+        </div>
+      } -->
+
+
+
+
+  
+      </div>
+    </div>
+  </div>
+</section>

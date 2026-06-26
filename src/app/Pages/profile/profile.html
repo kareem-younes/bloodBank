@@ -1,0 +1,56 @@
+<div class="profile-container" *ngIf="!loading && user; else loadingTemplate">
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="avatar">
+        <span>{{ user.name[0] }}</span>
+      </div>
+      <div>
+        <h2>{{ user.name }}</h2>
+        <p class="role">{{ user.role | titlecase }}</p>
+      </div>
+    </div>
+
+    <div class="profile-info">
+      <div class="info-item"><strong>Email:</strong> {{ user.email }}</div>
+      <div class="info-item"><strong>Phone:</strong> {{ user.phoneNumber }}</div>
+      <div class="info-item"><strong>Gender:</strong> {{ user.gender }}</div>
+      <div class="info-item"><strong>City:</strong> {{ user.city }}</div>
+      <div class="info-item"><strong>Address:</strong> {{ user.address }}</div>
+      <div class="info-item"><strong>Blood Type:</strong> {{ user.bloodGroup }}</div>
+      <div class="info-item"><strong>Date of Birth:</strong> {{ user.dateOfBirth | date }}</div>
+      <div class="info-item"><strong>National ID:</strong> {{ user.nationalId }}</div>
+    </div>
+
+    <button class="edit-btn" (click)="toggleEdit()">
+      {{ editing ? 'Cancel' : 'Edit Profile' }}
+    </button>
+
+    <div class="edit-section" *ngIf="editing">
+      <h3>Edit Profile</h3>
+      <div class="form-group">
+        <label>Name</label>
+        <input [(ngModel)]="user.name" type="text" />
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <input [(ngModel)]="user.city" type="text" />
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input [(ngModel)]="user.phoneNumber" type="text" />
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input [(ngModel)]="user.address" type="text" />
+      </div>
+
+      <button class="save-btn" (click)="saveProfile()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingTemplate>
+  <div class="loading">Loading profile...</div>
+</ng-template>
+
+<div *ngIf="error" class="error">{{ error }}</div>

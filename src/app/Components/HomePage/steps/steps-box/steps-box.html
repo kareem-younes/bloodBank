@@ -1,0 +1,32 @@
+<div class="box">
+  <div class="icon">
+      @if(icon == "person") {
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-user-plus h-10 w-10 text-primary"
+        >
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="#E23240" fill="none" stroke-width="2px"></path>
+        <circle cx="9" cy="7" r="4" stroke="#E23240" fill="none" stroke-width="2px"></circle>
+        <line x1="19" x2="19" y1="8" y2="14" stroke="#E23240" fill="none" stroke-width="2px"></line>
+        <line x1="22" x2="16" y1="11" y2="11" stroke="#E23240" fill="none" stroke-width="2px"></line>
+      </svg>
+    }@else if (icon == "search") {
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-search h-10 w-10 text-primary">
+        <circle cx="11" cy="11" r="8" stroke="#E23240" fill="none" stroke-width="2px"></circle>
+        <path d="m21 21-4.3-4.3" stroke="#E23240" fill="none" stroke-width="2px"></path>
+      </svg>
+    }@else if (icon == "heart") {
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-heart h-10 w-10 text-primary">
+        <path
+          d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+          stroke="#E23240" fill="none" stroke-width="2px"></path>
+      </svg>
+    }
+  </div>
+  <h3>{{title}}</h3>
+  <p>{{des}}</p>
+</div>

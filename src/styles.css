@@ -1,0 +1,130 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #e23240;
+  --black-color: black;
+  --white-color: white;
+  --text-muted: #737f8c;
+  --footer-background: #22262a;
+  --low-white: #ffffffcc;
+  --border-radius: .75rem;
+  --grey-hover: #f9f0f1;
+}
+a {
+  text-decoration: none;
+}
+.hidden {
+  display: none;
+}
+h2 {
+  margin: 0;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  transition: .3s;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Small */
+@media(min-width: 767px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/*medium*/
+@media(min-width:992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* larg */
+@media(min-width:1200px) {
+
+  .container {
+    width: 1170px;
+  }
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+
+}
+.highlight {
+  color: red !important;
+  font-weight: bold;
+}
+
+/* End Glaobal Rules */
+
+
+.main-btn {
+      border-radius: var(--border-radius);
+      background-color: var(--primary-color);
+      color: white;
+      padding: 15px;
+      transition: .3s;
+      font-weight: bold;
+      cursor: pointer;
+}
+.main-btn:hover {
+  transform: scale(1.1);
+}
+
+.gloable-box {
+  border-radius: var(--border-radius);
+  padding: 20px;
+  border: 2px solid var(--grey-hover);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000),
+    var(--tw-shadow);
+}
+
+.main-input {
+  border-radius: var(--border-radius);
+  border: 2px solid var(--grey-hover);
+  padding: 15px;
+  outline: none;
+  transition: .2s;
+}
+.main-input:focus-within {
+  outline: 3px solid var(--primary-color);
+}
+.main-input:focus {
+  outline: 3px solid var(--primary-color);
+}
+
+.heart-beat {
+  animation: heart 2s infinite linear;
+}
+
+.error {
+  color: red;
+}
+.white {
+  color: var(--white-color);
+}
+
+@keyframes heart {
+  0%,100% {
+    transform: scale(1);
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+  }
+  50% {
+    fill: #ea747e7c;
+    stroke: #ea747e7c;
+    transform: scale(1.3);
+  }
+}

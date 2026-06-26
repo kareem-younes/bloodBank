@@ -1,0 +1,16 @@
+.sign-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh-71px);
+}
+.signIn {
+  padding: 40px;
+}

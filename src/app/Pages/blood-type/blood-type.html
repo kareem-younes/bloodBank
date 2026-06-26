@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="header">
+    <div class="logo">🩸</div>
+    <h2>Find Separated Blood Components</h2>
+    <p>Request specific blood components for specialized medical treatments</p>
+  </div>
+
+  <section class="card-section">
+    <h3>Select Blood Component Type</h3>
+    <div class="cards">
+      <button class="card" *ngFor="let opt of options" [class.active]="selected() === opt.id" (click)="select(opt.id)">
+        <div class="dot" [style.background]="opt.color"></div>
+        <div class="card-body">
+          <div class="card-title">{{ opt.title }}</div>
+          <div class="card-desc">{{ opt.description }}</div>
+          <div class="chips">
+            <span class="chip" *ngFor="let u of opt.uses">{{ u }}</span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <h3>Request Information for {{ titleForForm() }}</h3>
+    <form [formGroup]="baseForm" class="grid">
+      <label>
+        <span>Full Name *</span>
+        <input formControlName="fullName" placeholder="Enter patient's full name" />
+      </label>
+      <label>
+        <span>Contact Phone *</span>
+        <input formControlName="phone" placeholder="+1 (555) 123-4567" />
+      </label>
+      <label class="full">
+        <span>Hospital/Clinic Address *</span>
+        <input formControlName="hospital" placeholder="Enter hospital or clinic address" />
+      </label>
+      <label>
+        <span>Required Date *</span>
+        <input type="date" formControlName="requiredDate" />
+      </label>
+      <label>
+        <span>Urgency Level *</span>
+        <select formControlName="urgency">
+          <option value="" disabled>Select urgency level</option>
+          <option *ngFor="let u of urgencyLevels" [value]="u">{{ u }}</option>
+        </select>
+      </label>
+    </form>
+
+    <div class="selected">
+      <div class="title">Selected Component: {{ titleForForm() }}</div>
+      <div class="muted">Dynamic fields vary by component</div>
+      <form [formGroup]="dynamicForm" class="grid">
+        <label>
+          <span>Units Required *</span>
+          <input type="number" formControlName="units" min="1" placeholder="e.g., 2" />
+        </label>
+        <label class="full">
+          <span>Notes</span>
+          <textarea rows="3" formControlName="notes" placeholder="Additional details"></textarea>
+        </label>
+      </form>
+    </div>
+
+    <div class="notes">
+      <div class="note-title">Important Notes</div>
+      <ul>
+        <li>Separated blood components have specific storage requirements</li>
+        <li>Processing time may vary based on availability</li>
+        <li>Medical prescription may be required for some components</li>
+        <li>Cross-matching will be performed before delivery</li>
+      </ul>
+    </div>
+
+    <button class="submit" (click)="submit()">Submit Blood Component Request</button>
+  </section>
+</div>

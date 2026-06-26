@@ -1,0 +1,14 @@
+<div class="m">
+  <app-main-heading title="Partner Hospitals" des="Find nearby hospitals and blood banks for donations"></app-main-heading>
+</div>
+<div class="container">
+  <app-search-box (listViewOut)="mapView = $event" (searchInput)="filterHospitals($event)"></app-search-box>
+  <div>
+    <app-map-view [ngClass]="!mapView ? 'hidden' : ''" class="view"></app-map-view>
+    <div class="hospitals">
+      @for (hosp of hospitalsData; track $index) {
+        <app-hospital-box [hospitalData]="hosp"></app-hospital-box>
+      }
+    </div>
+  </div>
+</div>

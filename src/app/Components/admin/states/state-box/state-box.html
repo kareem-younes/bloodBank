@@ -1,0 +1,52 @@
+<div class="state-box gloable-box">
+  @switch (icon) {
+  @case ("document") {
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E23240"
+    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+    <path d="M10 9H8"></path>
+    <path d="M16 13H8"></path>
+    <path d="M16 17H8"></path>
+  </svg>
+  }
+  @case ("clocck") {
+  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="lucide lucide-clock h-5 w-5 text-warning" data-lov-id="src/pages/AdminDashboard.tsx:186:18"
+    data-lov-name="Clock" data-component-path="src/pages/AdminDashboard.tsx" data-component-line="186"
+    data-component-file="AdminDashboard.tsx" data-component-name="Clock"
+    data-component-content="%7B%22className%22%3A%22h-5%20w-5%20text-warning%22%7D">
+    <circle cx="12" cy="12" r="10" stroke="#FFCC33" fill="none" stroke-width="2px"></circle>
+    <polyline points="12 6 12 12 16 14" stroke="#FFCC33" fill="none" stroke-width="2px"></polyline>
+  </svg>
+  }
+  @case ("done") {
+  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="lucide lucide-circle-check-big h-5 w-5 text-success" data-lov-id="src/pages/AdminDashboard.tsx:197:18"
+    data-lov-name="CheckCircle" data-component-path="src/pages/AdminDashboard.tsx" data-component-line="197"
+    data-component-file="AdminDashboard.tsx" data-component-name="CheckCircle"
+    data-component-content="%7B%22className%22%3A%22h-5%20w-5%20text-success%22%7D">
+    <path d="M21.801 10A10 10 0 1 1 17 3.335" stroke="#33CC33" fill="none" stroke-width="2px"></path>
+    <path d="m9 11 3 3L22 4" stroke="#33CC33" fill="none" stroke-width="2px"></path>
+  </svg>
+  }
+  @default {
+  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="lucide lucide-circle-x h-5 w-5 text-destructive" data-lov-id="src/pages/AdminDashboard.tsx:208:18"
+    data-lov-name="XCircle" data-component-path="src/pages/AdminDashboard.tsx" data-component-line="208"
+    data-component-file="AdminDashboard.tsx" data-component-name="XCircle"
+    data-component-content="%7B%22className%22%3A%22h-5%20w-5%20text-destructive%22%7D">
+    <circle cx="12" cy="12" r="10" stroke="#E64D4D" fill="none" stroke-width="2px"></circle>
+    <path d="m15 9-6 6" stroke="#E64D4D" fill="none" stroke-width="2px"></path>
+    <path d="m9 9 6 6" stroke="#E64D4D" fill="none" stroke-width="2px"></path>
+  </svg>
+  }
+  }
+  <div>
+    <p class="count">{{count}}</p>
+    <p class="state">{{state}}</p>
+  </div>
+</div>

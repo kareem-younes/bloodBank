@@ -1,0 +1,167 @@
+.container {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.logo {
+  font-size: 36px;
+}
+
+.card-section h3,
+.form-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  gap: 12px;
+  border: 1px solid #eee;
+  background: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.card.active {
+  outline: 2px solid #e74c3c;
+  background: #fff5f5;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  margin-top: 4px;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.card-desc {
+  color: #666;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.chip {
+  font-size: 11px;
+  background: #f6f6f6;
+  color: #333;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.form-section {
+  margin-top: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+
+label.full {
+  grid-column: span 2;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.selected {
+  margin-top: 12px;
+  background: #fff5f5;
+  border: 1px solid #f1c0c0;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.selected .title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.selected .muted {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.notes {
+  margin-top: 12px;
+  background: #fff8e1;
+  border: 1px solid #f3e2a7;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.note-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 12px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #c0392b;
+}
+
+@media (max-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  label.full {
+    grid-column: span 1;
+  }
+}

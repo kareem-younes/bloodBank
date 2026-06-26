@@ -1,0 +1,16 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.logo a {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.logo svg {
+  width: 2rem;
+  height: 2rem;
+}

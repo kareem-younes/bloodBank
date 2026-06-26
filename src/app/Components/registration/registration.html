@@ -1,0 +1,240 @@
+<div class=" w-100">
+
+
+ <div class="header">
+    <a href="/" class="logo-link">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           width="40" height="40" viewBox="0 0 24 24" 
+           fill="hsl(355, 75%, 54%)" stroke="hsl(355, 75%, 54%)" 
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+      </svg>
+      <span class="brand">BloodLink</span>
+    </a>
+  </div>
+
+
+  <form [formGroup]="registerForm" (ngSubmit)="formSubmit()" class="registration-form form-container w-672 m-auto">
+    <h2>Join BloodLink</h2>
+    <p>Create your account to start saving lives in your community</p>
+
+    <div class="form-row " style="margin: 0 auto;">
+      
+         <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input formControlName="name" type="text" id="fullName" placeholder="Enter your full name" required />
+          @if (registerForm.get("name")?.errors&&registerForm.get("name")?.touched) {
+            <div class="alert p-0 m-0">
+              @if (registerForm.get("name")?.getError("required")) {
+                  <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">Name Is Required</p>
+
+              }
+              @else if(registerForm.get("name")?.getError("minlength")) {
+                <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">Name Should be more than or equal  3 chars</p>
+              
+              }
+                 @else if(registerForm.get("name")?.getError("maxlength")) {
+              <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class="alert-danger bg-danger text-black rounded">Name Should be less than or equal  20 chars</p>
+              
+              }
+              
+            </div>
+
+          }
+          </div>
+          
+      
+     
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" formControlName="email" id="email" placeholder="Enter your email" required />
+      @if (registerForm.get("email")?.errors&&registerForm.get("email")?.touched) {
+            <div class="alert p-0 m-0">
+              @if (registerForm.get("email")?.getError("required")) {
+                  <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">Email Is Required</p>
+
+              }
+              @else if(registerForm.get("email")?.getError("email")) {
+                <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">email Should be @</p>
+              
+              }
+            </div>
+          }
+      
+      
+      
+      
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="password">Password *</label>
+        <input formControlName="password" type="password" id="password" placeholder="Create a password" required />
+            @if (registerForm.get("password")?.errors&&registerForm.get("password")?.touched) {
+            <div class="alert p-0 m-0">
+              @if (registerForm.get("password")?.getError("required")) {
+                  <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">password Is Required</p>
+
+              }
+              @else if(registerForm.get("password")?.getError("pattern")) {
+                <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">Password is required and must contain at least 6 characters</p>
+              
+              }
+            </div>
+          }
+      
+      
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Blood Groub*</label>
+        <input formControlName="bloodGroup" type="text" id="bloodGroub" placeholder="bloodgroub" required />
+              @if (registerForm.get("bloodGroup")?.errors&&registerForm.get("bloodGroup")?.touched) {
+            <div class="alert p-0 m-0">
+              @if (registerForm.get("bloodGroup")?.getError("required")) {
+                  <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">blood group is (A+,A-,B+,B-,AB+,AB-,O+,"O-)</p>
+
+              }
+            
+            </div>
+          }
+      
+      
+      
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" formControlName="phoneNumber" id="phone" placeholder="Enter your phone number" required />
+       @if (registerForm.get("phoneNumber")?.errors&&registerForm.get("phoneNumber")?.touched) {
+            <div class="alert p-0 m-0">
+              @if (registerForm.get("phoneNumber")?.getError("required")) {
+                  <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">phone Number is  Required</p>
+
+              }
+              @else if(registerForm.get("phoneNumber")?.getError("pattern")) {
+                <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">phone number must start 012 or 010 or 011</p>
+              
+              }
+            
+            </div>
+          }
+      
+      
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth *</label>
+        <input formControlName="dateOfBirth" type="date" id="dob" required />
+           @if (registerForm.get("dateOfBirth")?.errors&&registerForm.get("dateOfBirth")?.touched) {
+            <div class="alert p-0 m-0">
+              @if (registerForm.get("phoneNumber")?.getError("required")) {
+                  <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">dateOfBirth Number is  Required</p>
+
+              }
+            
+            
+            </div>
+          }
+      
+      
+      
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="nationalId">National ID *</label>
+        <input formControlName="nationalId" type="text" id="nationalId" placeholder="Enter your national ID" required />
+           @if (registerForm.get("nationalId")?.errors&&registerForm.get("nationalId")?.touched) {
+            <div class="alert p-0 m-0">
+              @if (registerForm.get("nationalId")?.getError("required")) {
+                  <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">nationalId is  Required</p>
+
+              }
+            
+            </div>
+          }
+      
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender *</label>
+        <select id="gender" formControlName="gender" required>
+          <option value="" disabled selected>Select your gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="address">Address *</label>
+        <input type="text" id="address" formControlName="address" placeholder="Enter your address" required />
+          @if (registerForm.get("address")?.errors&&registerForm.get("address")?.touched) {
+            <div class="alert p-0 m-0">
+              @if (registerForm.get("address")?.getError("required")) {
+                  <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">address is  Required</p>
+
+              }
+           
+            
+            </div>
+          }
+     
+     
+      </div>
+      <div class="form-group">
+        <label for="city">City *</label>
+        <input type="text" id="city" formControlName="city" placeholder="Enter your city" required />
+           @if (registerForm.get("city")?.errors&&registerForm.get("city")?.touched) {
+            <div class="alert p-0 m-0">
+              @if (registerForm.get("city")?.getError("required")){
+                  <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">city is  Required</p>
+
+              }
+            
+            
+            </div>
+          }
+      
+      </div>
+    </div>
+
+     <div class="form-row">
+      
+      <div class="form-group">
+        <label for="gender">role *</label>
+        <select id="gender" formControlName="role" required>
+          <option value="" disabled selected>Select your gender</option>
+          <option selected value="user">user</option>
+
+          <option value="admin">admin</option>
+        </select>
+      </div>
+    </div>
+
+
+
+
+            <button class="create-account-btn" type="submit">
+            Create Account
+            </button>
+            
+            @if (miserror) {<p  style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">{{miserror}}</p>
+}
+
+
+            
+
+
+
+    </form>
+
+
+
+
+
+</div>

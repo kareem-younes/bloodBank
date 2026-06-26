@@ -1,0 +1,81 @@
+.main-input {
+  padding: 10px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  margin: 0;
+}
+.main-btn {
+  font-weight: normal;
+}
+.main-btn svg {
+  color: white;
+}
+.toggles {
+  display: flex;
+  gap: 10px
+}
+.toggles > label {
+  padding: 10px 15px;
+  outline: none;
+  transition: .2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.selectedCheckSvg {
+  stroke: white !important;
+}
+.selectedCheck {
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: white;
+}
+.notSelectdCheck {
+  border-radius: var(--border-radius);
+  border: 2px solid var(--grey-hover);
+  background-color: var(--white-color);
+  color: black;
+}
+.notSelectdCheckSvg {
+  stroke: black;
+}
+.selectedCheck:hover {
+  background-color: brown;
+}
+.notSelectdCheck:hover {
+  background-color: var(--grey-hover);
+  color: var(--primary-color);
+}
+.notSelectdCheck:hover svg {
+  stroke: var(--primary-color);
+}
+
+@media(max-width: 768px) {
+  .search-box {
+    flex-direction: column;
+  }
+  .search {
+    width: 100%;
+  }
+  .toggles {
+    width: 100%;
+  }
+  .toggles > label {
+    flex: 1;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,76 @@
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.box .info h3 {
+  margin-top: 0;
+}
+.box .info > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.box .info > div:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.box .info svg {
+  stroke: #737f8c;
+  width: 20px;
+  height: 20px;
+}
+.box .info > div:first-of-type span {
+  color: #73808C;
+}
+.box .info span {
+  font-size: 14px;
+}
+.select {
+  display: flex;
+}
+.select .keywords {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 100px;
+}
+.select .keywords span {
+  padding: 3px 8px;
+  background-color: #73808C;
+  border-radius: var(--border-radius);
+  font-size: .8rem;
+  height: fit-content;
+  color: white;
+}
+.main-btn {
+  padding: 10px 16px;
+  font-size: .875rem;
+  box-sizing: border-box;
+}
+@media(max-width: 768px) {
+  .select .keywords {
+    display: none;
+  }
+}
+@media(max-width: 450px) {
+  .box {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+  .select .keywords {
+    display: block;
+    margin: 0;
+  }
+  .select {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+  .select,
+  .main-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

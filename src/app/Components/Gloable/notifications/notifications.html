@@ -1,0 +1,10 @@
+<div id="notification-popup" class="notification" [class.show]="visible" (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()">
+  <div class="content">
+    <div class="header">
+      <h4>{{ title }}</h4>
+      <button class="close-btn" (click)="close()">×</button>
+    </div>
+    <p>{{ message }}</p>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<header>
+<div class="container">
+  <app-logo></app-logo>
+  <ul class="links" [ngClass]="menuOpen ? 'openMenu' : 'closeMenu'">
+    <li>
+      <a routerLinkActive="highlight" routerLink="/find-blood">Find Blood</a>
+    </li>
+    <li>
+      <a routerLinkActive="highlight" routerLink="hospitals">Hospitals</a>
+    </li>
+    <li>
+      <a routerLinkActive="highlight" routerLink="DonateSupplies">Donate Supplies</a>
+    </li>
+    <li>
+      <a routerLinkActive="highlight" routerLink="blood-type">Blood Types</a>
+    </li>
+    <li>
+      <a routerLinkActive="highlight" routerLink="DonateMedicine">Donate Medicine</a>
+    </li>
+    <li>
+      <a routerLinkActive="highlight" routerLink="Requests">Requests</a>
+    </li>
+    <li>
+      <a routerLinkActive="highlight" routerLink="profile">Profile</a>
+    </li>
+  </ul>
+  <ul class="sign">
+    <li  class="sign" [ngClass]="isUserLogged ? 'hidden' : ''">
+      <a class="login" routerLink="login">Login</a>
+    </li>
+    <li  class="sign" [ngClass]="isUserLogged ? 'hidden' : ''">
+      <a class="signup" routerLink="signup">Get Started</a>
+    </li>
+    <li [ngClass]="!isUserLogged ? 'hidden' : ''">
+      <a class="highlight username" routerLink="profile">{{userName}}</a>
+    </li>
+  </ul>
+  <div class="menu-control">
+    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="" [ngClass]="menuOpen ? 'hidden' : 'block'"
+      (click)="openMenu()">
+      <line x1="4" x2="20" y1="12" y2="12" stroke="#22262A" fill="none" stroke-width="2px"></line>
+      <line x1="4" x2="20" y1="6" y2="6" stroke="#22262A" fill="none" stroke-width="2px"></line>
+      <line x1="4" x2="20" y1="18" y2="18" stroke="#22262A" fill="none" stroke-width="2px"></line>
+    </svg>
+    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="menu-close"
+      [ngClass]="!menuOpen ? 'hidden' : 'block'"
+      (click)="closeMenu()">
+      <path d="M18 6 6 18" stroke="#22262A" fill="none" stroke-width="2px"></path>
+      <path d="m6 6 12 12" stroke="#22262A" fill="none" stroke-width="2px"></path>
+    </svg>
+  </div>
+</div>
+</header>

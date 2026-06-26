@@ -1,0 +1,149 @@
+<app-seaction-header>
+<div class="donate-medicine-header m-4">
+  <div class="icon-circle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+      stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pill-icon">
+      <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path>
+      <path d="m8.5 8.5 7 7"></path>
+    </svg>
+  </div>
+
+  <h1>Donate Medicine</h1>
+  <p>Help patients in need by donating unused medications</p>
+</div>
+
+</app-seaction-header>
+
+<!-- end seactionHeader -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+   <form [formGroup]="registerForm" (ngSubmit)="formsSubmit()" class="w mx-auto space-y-6 my-5">
+
+  <!-- SECTION TITLE -->
+  <div class="flex flex-col space-y-1.5 p-6">
+    <h3 class="text-2xl font-semibold flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" viewBox="0 0 24 24">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+      </svg>
+      Donation Details
+    </h3>
+  </div>
+
+  <!-- FULL NAME + PHONE -->
+  <div class="row">
+    <!-- Full Name -->
+    <div class="col-6 position-relative">
+      <label for="fullName" class="form-label">Full Name *</label>
+      <input formControlName="name" type="text" id="fullName" placeholder="Enter your full name" class="form full">
+      <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.errors" class="text-danger small mt-1">
+        <div *ngIf="registerForm.get('name')?.hasError('required')">Name is required</div>
+        <div *ngIf="registerForm.get('name')?.hasError('minlength')">Name must be at least 3 characters</div>
+        <div *ngIf="registerForm.get('name')?.hasError('maxlength')">Name must not exceed 30 characters</div>
+      </div>
+    </div>
+
+    <!-- Phone -->
+    <div class="col-6 position-relative">
+      <label for="fullNumber" class="form-label">Phone Number *</label>
+      <input formControlName="phoneNumber" type="tel" id="fullNumber" placeholder="+1(555)123-456" class="form full">
+      <div *ngIf="registerForm.get('phoneNumber')?.touched && registerForm.get('phoneNumber')?.errors" class="text-danger small mt-1">
+        <div *ngIf="registerForm.get('phoneNumber')?.hasError('required')">Phone number is required</div>
+        <div *ngIf="registerForm.get('phoneNumber')?.hasError('pattern')">Enter a valid phone number</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPE + HOSPITAL -->
+  <div class="d-flex justify-content-between flex-wrap">
+    <!-- Type of Tools -->
+    <div class="cols">
+      <label for="Type-of-Medicine" class="form-label">Type of Medicine *</label>
+      <select formControlName="typeOfTools" id="Type-of-Medicine" class="form full">
+        <option value="">Select medicine type</option>
+        <option *ngFor="let item of typeOftools" [value]="item.name">{{ item.name }}</option>
+      </select>
+      <div *ngIf="registerForm.get('typeOfTools')?.touched && registerForm.get('typeOfTools')?.hasError('required')" class="text-danger small mt-1">
+        Please select the type of medicine
+      </div>
+    </div>
+
+    <!-- Hospital -->
+    <div class="cols">
+      <label for="hospital" class="form-label">Recipient Hospital *</label>
+      <select formControlName="hospital" id="hospital" class="form full">
+        <option value="">Select destination hospital</option>
+        <option *ngFor="let item of categorys" [value]="item._id">{{ item.name }}</option>
+      </select>
+      <div *ngIf="registerForm.get('hospital')?.touched && registerForm.get('hospital')?.hasError('required')" class="text-danger small mt-1">
+        Please select a hospital
+      </div>
+    </div>
+  </div>
+
+  <!-- DATE + ADDRESS -->
+  <div class="grid-container">
+    <!-- Donation Date -->
+    <div class="form-group">
+      <label for="donationDate">Preferred Donation Date *</label>
+      <input type="date" id="donationDate" formControlName="dateOfBirth" class="form full">
+      <div *ngIf="registerForm.get('dateOfBirth')?.touched && registerForm.get('dateOfBirth')?.errors" class="text-danger small mt-1">
+        <div *ngIf="registerForm.get('dateOfBirth')?.hasError('required')">Date is required</div>
+        <div *ngIf="registerForm.get('dateOfBirth')?.hasError('minDate')">Date cannot be before today</div>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="form-group">
+      <label for="address">Pickup Address *</label>
+      <input formControlName="address" type="text" id="address" placeholder="Your address for pickup" class="form full">
+      <div *ngIf="registerForm.get('address')?.touched && registerForm.get('address')?.errors" class="text-danger small mt-1">
+        <div *ngIf="registerForm.get('address')?.hasError('required')">Address is required</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" class="submit-donation-btn" [disabled]="registerForm.invalid">
+    Submit Donation Request
+  </button>
+
+</form>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

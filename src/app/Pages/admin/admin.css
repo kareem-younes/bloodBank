@@ -1,0 +1,40 @@
+.icon-wrapper {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #e232401a;
+  margin:20px auto 5px auto;
+}
+.icon-wrapper svg {
+  width: 30px;
+  height: 30px;
+}
+.requests-heading {
+  background-color: #f6f7f9;
+  padding: 3px;
+  display: flex;
+  margin: 20px 0;
+  border-radius: 6px;
+}
+.requests-heading span {
+  flex: 1;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  transition: .3s;
+  cursor: pointer;
+}
+.enabled {
+  background-color: white;
+  color: black !important;
+}
+.requests {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}

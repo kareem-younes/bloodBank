@@ -1,0 +1,23 @@
+.state-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.gloable-box {
+  padding: 15px;
+}
+.state-box svg {
+  width: 50px;
+  height: 50px;
+}
+.state-box p {
+  margin: 0;
+}
+.state-box .count {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.state-box .state {
+  color: var(--text-muted);
+  font-size: .875rem;
+}

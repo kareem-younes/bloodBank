@@ -1,0 +1,8 @@
+.states {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.state-box {
+  flex: 1;
+}

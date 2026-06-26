@@ -1,0 +1,102 @@
+<div class="requests-box gloable-box">
+  <div class="header">
+    <h3>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplets h-4 w-4 text-primary">
+        <path
+          d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z">
+        </path>
+        <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"></path>
+      </svg>
+      Blood Request
+    </h3>
+    <ul>
+      <li>Urgent</li>
+      <li>Pending</li>
+    </ul>
+  </div>
+  <ul>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-users h-4 w-4 text-muted-foreground">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="#73808C" fill="none" stroke-width="2px"></path>
+        <circle cx="9" cy="7" r="4" stroke="#73808C" fill="none" stroke-width="2px"></circle>
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="#73808C" fill="none" stroke-width="2px"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#73808C" fill="none" stroke-width="2px"></path>
+      </svg>
+      <span>Name: </span>
+      <span>{{pendingData?.payload.name}}</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-users h-4 w-4 text-muted-foreground">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="#73808C" fill="none" stroke-width="2px"></path>
+        <circle cx="9" cy="7" r="4" stroke="#73808C" fill="none" stroke-width="2px"></circle>
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="#73808C" fill="none" stroke-width="2px"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#73808C" fill="none" stroke-width="2px"></path>
+      </svg>
+      <span>Phone: </span>
+      <span>{{pendingData?.payload.phoneNumber}}</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-users h-4 w-4 text-muted-foreground">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="#73808C" fill="none" stroke-width="2px"></path>
+        <circle cx="9" cy="7" r="4" stroke="#73808C" fill="none" stroke-width="2px"></circle>
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="#73808C" fill="none" stroke-width="2px"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#73808C" fill="none" stroke-width="2px"></path>
+      </svg>
+      <span>Date: </span>
+      <span>{{pendingData?.createdAt}}</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-users h-4 w-4 text-muted-foreground">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="#73808C" fill="none" stroke-width="2px"></path>
+        <circle cx="9" cy="7" r="4" stroke="#73808C" fill="none" stroke-width="2px"></circle>
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="#73808C" fill="none" stroke-width="2px"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#73808C" fill="none" stroke-width="2px"></path>
+      </svg>
+      <span>Address: </span>
+      <span>{{pendingData?.payload.address}}</span>
+    </li>
+    <li>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-users h-4 w-4 text-muted-foreground">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="#73808C" fill="none" stroke-width="2px"></path>
+        <circle cx="9" cy="7" r="4" stroke="#73808C" fill="none" stroke-width="2px"></circle>
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="#73808C" fill="none" stroke-width="2px"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#73808C" fill="none" stroke-width="2px"></path>
+      </svg>
+      <span>Blood Group: </span>
+      <span>{{pendingData?.payload.bloodGroup}}</span>
+    </li>
+  </ul>
+  <div class="buttons">
+    <div (click)="approveRequest(pendingData?._id)" class="approve main-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 block">
+        <path d="M21.8 10A10 10 0 1 1 17 3.3" />
+        <path d="m9 11 3 3L22 4" />
+      </svg>
+      Approve
+    </div>
+    <div (click)="rejectRequest(pendingData?._id)" class="reject main-btn">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-circle-x h-4 w-4" data-lov-id="src/pages/AdminDashboard.tsx:321:26" data-lov-name="XCircle"
+        data-component-path="src/pages/AdminDashboard.tsx" data-component-line="321" data-component-file="AdminDashboard.tsx"
+        data-component-name="XCircle" data-component-content="%7B%22className%22%3A%22h-4%20w-4%22%7D">
+        <circle cx="12" cy="12" r="10" stroke="#FFFFFF" fill="none" stroke-width="2px"></circle>
+        <path d="m15 9-6 6" stroke="#FFFFFF" fill="none" stroke-width="2px"></path>
+        <path d="m9 9 6 6" stroke="#FFFFFF" fill="none" stroke-width="2px"></path>
+      </svg>
+      Reject
+    </div>
+  </div>
+</div>

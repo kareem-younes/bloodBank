@@ -1,0 +1,74 @@
+form {
+  padding: 20px 30px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--grey-hover);
+}
+.main-heading h2 {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.main-heading h2 svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  color: var(--primary-color)
+}
+
+.main-heading p {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+.inputs-holder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.inputs-holder > div label {
+  display: block;
+  margin-bottom: 20dpx;
+}
+.inputs-holder > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.inputs-holder > div input,
+.inputs-holder > div select {
+  border-radius: var(--border-radius);
+  border: 2px solid var(--grey-hover);
+  padding: 15px;
+  outline: none;
+  transition: .2s;
+  width: auto;
+  flex: 1;
+}
+.inputs-holder > div select option {
+  border-radius: var(--border-radius);
+}
+.inputs-holder > div select option:hover {
+  background-color: rgba(165, 42, 42, 0.349);
+  color: var(--primary-color);
+}
+.inputs-holder > div select::selection {
+  background-color: red;
+}
+.inputs-holder > div input:focus,
+.inputs-holder > div select:focus {
+  outline: 3px solid var(--primary-color);
+}
+.main-btn {
+  width: 100%;
+}
+@media(max-width: 991px) {
+  .inputs-holder {
+    flex-direction: column;
+  }
+  .inputs-holder > div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

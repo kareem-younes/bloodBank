@@ -1,0 +1,62 @@
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: -400px;
+  /* Hidden by default */
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 1rem 1.2rem;
+  min-width: 280px;
+  max-width: 320px;
+  border-left: 5px solid #007bff;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 9999;
+  font-family: system-ui, sans-serif;
+}
+
+/* Slide in */
+.notification.show {
+  right: 20px;
+  opacity: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.header h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.header .close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #555;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header .close-btn:hover {
+  color: #000;
+}
+
+.notification p {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Hover freeze effect */
+.notification:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
