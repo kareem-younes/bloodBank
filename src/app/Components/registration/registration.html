@@ -12,8 +12,6 @@
       <span class="brand">BloodLink</span>
     </a>
   </div>
-
-
   <form [formGroup]="registerForm" (ngSubmit)="formSubmit()" class="registration-form form-container w-672 m-auto">
     <h2>Join BloodLink</h2>
     <p>Create your account to start saving lives in your community</p>
@@ -43,8 +41,6 @@
           }
           </div>
           
-      
-     
       <div class="form-group">
         <label for="email">Email Address *</label>
         <input type="email" formControlName="email" id="email" placeholder="Enter your email" required />
@@ -56,14 +52,9 @@
               }
               @else if(registerForm.get("email")?.getError("email")) {
                 <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">email Should be @</p>
-              
               }
             </div>
           }
-      
-      
-      
-      
       </div>
     </div>
 
@@ -83,8 +74,6 @@
               }
             </div>
           }
-      
-      
       </div>
       <div class="form-group">
         <label for="confirmPassword">Blood Groub*</label>
@@ -93,14 +82,10 @@
             <div class="alert p-0 m-0">
               @if (registerForm.get("bloodGroup")?.getError("required")) {
                   <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">blood group is (A+,A-,B+,B-,AB+,AB-,O+,"O-)</p>
-
               }
             
             </div>
           }
-      
-      
-      
       </div>
     </div>
 
@@ -121,8 +106,6 @@
             
             </div>
           }
-      
-      
       </div>
       <div class="form-group">
         <label for="dob">Date of Birth *</label>
@@ -133,13 +116,8 @@
                   <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">dateOfBirth Number is  Required</p>
 
               }
-            
-            
             </div>
           }
-      
-      
-      
       </div>
     </div>
 
@@ -177,14 +155,9 @@
             <div class="alert p-0 m-0">
               @if (registerForm.get("address")?.getError("required")) {
                   <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">address is  Required</p>
-
               }
-           
-            
             </div>
           }
-     
-     
       </div>
       <div class="form-group">
         <label for="city">City *</label>
@@ -195,8 +168,6 @@
                   <p style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">city is  Required</p>
 
               }
-            
-            
             </div>
           }
       
@@ -215,26 +186,11 @@
         </select>
       </div>
     </div>
-
-
-
-
             <button class="create-account-btn" type="submit">
             Create Account
             </button>
             
             @if (miserror) {<p  style="background-color:hsl(355, 75%, 54%) ;opacity: 0.7;" class=" text-black rounded">{{miserror}}</p>
 }
-
-
-            
-
-
-
     </form>
-
-
-
-
-
 </div>
